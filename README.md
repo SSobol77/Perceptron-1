@@ -27,14 +27,14 @@ The algorithm unfolds the recurrent network through time, turning it into a feed
  * Initialize the network weights and biases randomly or using a specific initialization scheme.
   
  * Set the learning rate and other hyperparameters.
+    &nbsp;
    
-   &nbsp;
 
 *2. Input Sequences:*
 
  * Prepare your input data as a sequence of time steps. Each time step has an input vector.
+ &nbsp;
 
-   &nbsp;
 
 *3. Forward Pass:*
 
@@ -43,14 +43,14 @@ The algorithm unfolds the recurrent network through time, turning it into a feed
     * Compute the hidden state ``h_t`` using the current input x_t and the previous hidden state ``h_{t-1}``.
       
     * Calculate the output of the network ``y_t`` using the current hidden state ``h_t``.
-   
-      &nbsp;
+   &nbsp;
+
 
 *4. Loss Computation:*
 
    * Calculate the loss at each time step using the predicted output ``y_t`` and the corresponding `target or ground truth ``target_t``.
+&nbsp;
 
-  &nbsp;
 
 *5. Backward Pass Through Time:*
 
@@ -60,21 +60,22 @@ The algorithm unfolds the recurrent network through time, turning it into a feed
    
     * Compute the gradient of the loss with respect to the hidden state ``dL/dh_t = dL/dh_t + dL/dy_t * dy_t/dh_t``.
       
-    * Update the gradients of the weights and biases using the gradient of the loss with respect to the hidden state and the inputs.
+    * Update the gradients of the weights and biases using the gradient of the loss with respect to the hidden state and the inputs. 
+&nbsp;
 
- &nbsp;
  
 *6. Gradient Descent Update:*
 
  * Use the computed gradients to update the network's weights and biases. This can be done using various optimization algorithms like stochastic gradient descent (SGD), Adam, RMSProp, etc.
+&nbsp;
 
- &nbsp;
  
 *7. Repeat:*
 
  * Iterate over the dataset multiple times (epochs), updating the weights after each pass.
 
 &nbsp;
+
 
 It's important to note that BPTT can suffer from the vanishing gradient problem when training deep recurrent networks over long sequences. This can make it challenging for the network to effectively learn dependencies that span a large number of time steps. 
 
